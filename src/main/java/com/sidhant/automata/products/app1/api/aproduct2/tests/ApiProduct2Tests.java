@@ -1,0 +1,40 @@
+package com.sidhant.automata.products.app1.api.aproduct2.tests;
+
+import com.sidhant.automata.core.annotations.Description;
+import com.sidhant.automata.core.cli.config.FmwkConfig;
+import com.sidhant.automata.core.listeners.MyListener;
+import com.sidhant.automata.core.logger.MyLogger;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+@Listeners(MyListener.class)
+public class ApiProduct2Tests {
+
+    FmwkConfig config = null;
+
+    @BeforeSuite
+    public void beforeSuite() {
+        config = FmwkConfig.getInstance();
+    }
+
+    @Description("This is test one")
+    @Test
+    public void test_1() {
+        MyLogger.log("This is test 1 : " + config.getFirm(), "test_1");
+    }
+
+    @Description("This is test two")
+    @Test
+    public void test_2() {
+        MyLogger.log("This is test 2", "test_2");
+    }
+
+    @Description("This will test our logger")
+    @Test
+    public void test_3() {
+        assert false;
+        MyLogger.log("This is test 3", "test_3");
+    }
+
+}

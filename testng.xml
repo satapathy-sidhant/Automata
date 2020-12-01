@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="This suite file was created at : 2020-11-30">
+    <parameter name="session-id" value="1606735340659"/>
+    <test thread-count="1" parallel="tests" name="Feature1Tests">
+        <parameter name="firm" value="derm"/>
+        <classes>
+            <class name="com.sidhant.automata.products.app2.web.wfeature1.tests.Feature1Tests"/>
+        </classes>
+    </test> <!-- Feature1Tests -->
+</suite> <!-- This suite file was created at : 2020-11-30 -->
