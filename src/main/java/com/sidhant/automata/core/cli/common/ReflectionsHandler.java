@@ -20,7 +20,10 @@ public class ReflectionsHandler {
     private final Reflections reflections;
 
     public ReflectionsHandler() {
-        reflections = new Reflections(new ConfigurationBuilder().setUrls(ClasspathHelper.forPackage(BASE_PACKAGE)).addScanners(new MethodAnnotationsScanner()).filterInputsBy(new FilterBuilder().includePackage(BASE_PACKAGE).exclude(EXCLUDE_PACKAGES)));
+        reflections = new Reflections(new ConfigurationBuilder()
+            .setUrls(ClasspathHelper.forPackage(BASE_PACKAGE))
+            .filterInputsBy(new FilterBuilder().includePackage(BASE_PACKAGE).exclude(EXCLUDE_PACKAGES))
+            .addScanners(new MethodAnnotationsScanner()));
     }
 
     public Set<String> getAllTestClasses() {

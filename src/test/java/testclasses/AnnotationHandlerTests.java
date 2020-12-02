@@ -1,5 +1,6 @@
 package testclasses;
 
+import com.sidhant.automata.core.annotations.AnnotationHandler;
 import com.sidhant.automata.core.annotations.Description;
 import com.sidhant.automata.core.logger.MyLogger;
 import com.sidhant.automata.core.runner.CliRunner;
@@ -28,7 +29,7 @@ public class AnnotationHandlerTests {
             .map(Class::getMethods)
             .flatMap(Arrays::stream)
             .filter(m -> m.isAnnotationPresent(Description.class))
-            .forEach(m -> MyLogger.log("\t" + m.getAnnotation(Description.class).value(), "Annotation Test"));
+            .forEach(m -> MyLogger.log("\t" + AnnotationHandler.getAnnotation(m, Description.class).value(), "Annotation Test"));
 
     }
 }

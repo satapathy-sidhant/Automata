@@ -9,7 +9,7 @@ public class CliParameters {
     @Parameter(names = "--help", help = true)
     public boolean help;
 
-    @Parameter(names = {"-F", "--firm"}, description = "The name of the primary firm under test", required = false)
+    @Parameter(names = {"-F", "--firm"}, description = "The name of the primary firm under test", required = true)
     public String firm;
 
     @Parameter(names = {"-L", "--platform"}, description = "API, WEB, MOBILE", required = true, converter = RunnerCLIPlatformConverter.class)
