@@ -7,9 +7,11 @@ import com.sidhant.automata.core.cli.common.TestNGSuiteBuilder;
 import com.sidhant.automata.core.cli.config.FmwkConfig;
 import com.sidhant.automata.core.filters.TestFilter;
 import com.sidhant.automata.config.ConfigHandler;
+import com.sidhant.automata.core.logger.MyLogger;
 import org.testng.TestNG;
 import org.testng.xml.XmlSuite;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,6 +21,7 @@ public class CliRunner {
     public static void main(String[] args) {
         CliParameters params = new CliParameters();
         readParams(params, args);
+        MyLogger.logList(Arrays.asList(params.firm, params.product, params.platform), "Cli Parameters" , "MAIN");
         FmwkConfig.getInstance().createTheConfig(params, ConfigHandler.buildConfig("config.app1.properties"));
         List<XmlSuite> suiteFile = new TestNGSuiteBuilder().build(getFilteredTests(getAllTests(), params));
         TestNG tng = new TestNG();

@@ -12,9 +12,6 @@ public class CliParameters {
     @Parameter(names = {"-F", "--firm"}, description = "The name of the primary firm under test", required = false)
     public String firm;
 
-    @Parameter(names = {"-E", "--environment"}, description = "The target environment for the session", required = false)
-    public String environment;
-
     @Parameter(names = {"-L", "--platform"}, description = "API, WEB, MOBILE", required = true, converter = RunnerCLIPlatformConverter.class)
     public Platforms platform;
 

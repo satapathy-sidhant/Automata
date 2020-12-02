@@ -1,7 +1,7 @@
 package com.sidhant.automata.core.cli.config;
 
-import com.sidhant.automata.core.cli.common.CliParameters;
 import com.sidhant.automata.config.CommonConfig;
+import com.sidhant.automata.core.cli.common.CliParameters;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +15,6 @@ public class FmwkConfig {
     }
 
     private String firm;
-    private String server;
     private List<String> users;
     private Map<String, String> usernames;
 
@@ -31,10 +30,6 @@ public class FmwkConfig {
         return firm;
     }
 
-    public String getServer() {
-        return server;
-    }
-
     public static FmwkConfig getInstance() {
         if (Objects.isNull(fmwkConfig)) {
             fmwkConfig = new FmwkConfig();
@@ -44,7 +39,6 @@ public class FmwkConfig {
 
     public void createTheConfig(CliParameters parameters, CommonConfig commonConfig) {
         firm = parameters.firm;
-        server = parameters.environment;
         users = commonConfig.getAppConfig().users();
         usernames = commonConfig.getAppConfig().usernames();
     }

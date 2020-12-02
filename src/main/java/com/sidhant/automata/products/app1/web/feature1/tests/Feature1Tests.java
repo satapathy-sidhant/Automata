@@ -3,6 +3,7 @@ package com.sidhant.automata.products.app1.web.feature1.tests;
 import com.sidhant.automata.core.annotations.Description;
 import com.sidhant.automata.core.listeners.MyListener;
 import com.sidhant.automata.core.logger.MyLogger;
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -25,6 +26,6 @@ public class Feature1Tests {
     @Test
     public void test_3() {
         MyLogger.log("This is test 3", "test_3");
-        assert false;
+        Assert.assertEquals(0,1);
     }
 }
